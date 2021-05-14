@@ -166,7 +166,6 @@ fun! xmake#load()
     let cache = []
     let tf = tempname()
     fun! LoadXCfg(job, code, stream) closure
-        call log#('LoadXCfg entered.')
         let err = []
         if a:code
             call add(err, 'xmake returned ' . a:code)
@@ -186,7 +185,6 @@ fun! xmake#load()
         endt
     endf
     let cmdline = ['xmake', 'lua', s:path . '/spy.lua', '-o', tf, 'project']
-    call log#(cmdline)
     let Callback = {job, data, stream->add(cache, data)}
-    call log#('xmake job', job#start(cmdline, {'on_stdout': Callback, 'on_exit': funcref('LoadXCfg')}))
+    job#start(cmdline, {'on_stdout': Callback, 'on_exit': funcref('LoadXCfg')})
 endf
