@@ -1,30 +1,28 @@
 
-[XMake](https://github.com/tboox/xmake)的vim插件
+Vim plugin for [XMake](https://github.com/tboox/xmake).
 
-## Vim版本
+Requires Vim 8.0+ or Neovim.
 
-Vim8.0+ 或者 neovim
-
-## 依赖
+## Dependencies
 
 * x.vim     https://github.com/luzhlon/x.vim
 * qrun.vim  https://github.com/luzhlon/qrun.vim
 
-## 功能
+## Features
 
-* 使用Vim打开xmake.lua文件时，加载对应的配置
-* 保存xmake.lua时重新加载配置
-* XMakek命令Tab键自动完成
-* 异步构建，构建前会保存所有文件
-* 构建失败自动打开quickfix窗口显示错误列表
-* 构建并运行(Windows GVim下打开新的cmd窗口运行，不阻塞GVim窗口)
+* Automatically loads configuration when opening `xmake.lua`
+* Reloads configuration when saving xmake.lua
+* Tab auto-completion(?)
+* Asynchronous build; all files will be automatically saved before building
+* If the build fails, the quickfix window opens with an error list
+* Build and run (open a new cmd window to run under Windows GVim without blocking the GVim window)
 
-## 命令
+## Commands
 
-| 命令                 | 功能                                               |
+| Command                 | Description                                               |
 | -------------------- | -------------------------------------------------- |
-| XMake build [target] | 构建目标，不指定target则构建所有目标               |
-| XMake run [target]   | 运行目标，不指定target会自动寻找可运行的目标运行   |
-| XMake [...]          | 使用...参数运行xmake命令，输出会投递到quickfix窗口 |
-| XMakeLoad            | 手动加载xmake.lua里的配置                          |
-| XMakeGen             | 根据当前的配置生成xmake.lua文件(实验性质)          |
+| `:XMake build [target]` | Build target (build all targets if target is not specified)               |
+| `:XMake run [target]`   | Run target, if a target is not specified it will attempt to find one   |
+| `:XMake [...]`          | Run `xmake` with the `...` parameters, displaying the output in the quickfix window |
+| `:XMakeLoad`            | Manually load the configuration in xmake.lua                          |
+| `:XMakeGen`             | Generate `xmake.lua` according to the current configuration (experimental)          |
