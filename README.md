@@ -1,3 +1,4 @@
+This plugin is not mine. I edited a few lines to fix errors and attempted an English translation (based on Google Translate):
 
 Vim plugin for [XMake](https://github.com/tboox/xmake).
 
