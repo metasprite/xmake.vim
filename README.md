@@ -11,7 +11,7 @@ Requires Vim 8.0+ or Neovim.
 ## Features
 
 * Automatically loads configuration when opening `xmake.lua`
-* Reloads configuration when saving xmake.lua
+* Reloads configuration when saving `xmake.lua`
 * Tab auto-completion(?)
 * Asynchronous build; all files will be automatically saved before building
 * If the build fails, the quickfix window opens with an error list
@@ -23,6 +23,6 @@ Requires Vim 8.0+ or Neovim.
 | -------------------- | -------------------------------------------------- |
 | `:XMake build [target]` | Build target (build all targets if target is not specified)               |
 | `:XMake run [target]`   | Run target, if a target is not specified it will attempt to find one   |
-| `:XMake [...]`          | Run `xmake` with the `...` parameters, displaying the output in the quickfix window |
+| `:XMake [...]`          | Run `xmake` with `...` as parameters, displaying the output in the quickfix window |
 | `:XMakeLoad`            | Manually load the configuration in xmake.lua                          |
 | `:XMakeGen`             | Generate `xmake.lua` according to the current configuration (experimental)          |
